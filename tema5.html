@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tema 5</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+
+
+<body>
+  <header>
+          <h1>Álgebra Abstracta</h1>
+          <nav>
+              <ul>
+                  <li><a href="tema1.html">Tema 1</a></li>
+                  <li><a href="tema2.html">Tema 2</a></li>
+                  <li><a href="tema3.html">Tema 3</a></li>
+                  <li><a href="tema4.html">Tema 4</a></li>
+                  <li><a href="tema5.html">Tema 5</a></li>
+                  <li><a href="tema6.html">Tema 6</a></li>
+              </ul>
+          </nav>    
+  </header>
+
+  <script>
+  function mostrarOcultarTexto(id) {
+    var texto = document.getElementById(id);
+    var boton = document.querySelector('.boton-mostrar');
+    if (texto.style.display === 'none' || texto.style.display === '') {
+      texto.style.display = 'block';
+      boton.textContent = 'Ocultar Demostración';
+    } else {
+      texto.style.display = 'none';
+      boton.textContent = 'Mostrar Demostración';
+    }
+  }
+  </script>
+
+  <div class="container">
+    <center>
+    <h1>Tema 5:</h1>
+    </center>
+    <center>
+        <h2>Anillos</h2>
+    </center>
+    <ul>
+        <li><strong>Definición de anillo</strong>: \((R,+,\cdot)\) es un anillo si:
+            <ol type="a">
+                <li> \((R,+)\) es un grupo abeliano (conmutativo, con e. neutro y e. inverso)</li>
+                <li>\((rs)t = r(st) \quad \forall r,s,t \in R\)</li>
+                <li>\((r+s)t = rt + st \quad \forall r,s,t \in R\)</li>
+            </ol>
+        </li>
+        <li><strong>Anillo conmutativo</strong>: Si \((R, \cdot)\) es conmutativo \(\quad rs = sr \quad \forall r,s \in R\)</li>
+        <li><strong>Anillo unitario</strong>: Si \((R, \cdot)\) tiene elemento neutro \(\quad r1=1r=r \quad \forall r \in R\)</li>
+        <li><strong>Cuerpo</strong>: Anillo conmutativo \(R\) que \(\quad \forall r \in R-\{0\} \to \exists s \in R-\{0\}\) t.q \(\quad rs=1\)</li>
+        <li><strong>Propiedades de anillos</strong>:
+            <ol type="a">
+                <li>\(0\cdot r = r \cdot 0 = 0 \quad \forall r \in R\)</li>
+                <li>\(r(-s) = (-r)s = -rs\) (Regla de los signos)</li>
+                <li>\((nr)(ms) = (nm)(rs) \quad \forall r,s \in R \quad \forall n,m \in \mathbb{Z}\)</li>
+            </ol>
+        </li>
+        <li>\(R\) es un <strong>dominio de integridad</strong> si \((R,+,\cdot)\) es anillo conmutativo, unitario y verifica que si \(rs = 0 \Longrightarrow r=0 \quad \text{o} \quad s=0 \quad\) (Un D.I. no tiene divisores de cero)</li>
+        <li>\(r,s \in R-\{0\}\) son <strong>divisores de cero</strong> si \(r\cdot s=0 \quad\) o \(\quad s \cdot r=0\)</li>
+        <li>\(u \in R\) es <strong>invertible o unidad</strong> si \(\exists v \in R \quad | \quad uv = vu = 1\) (si \(u\) tiene inverso)</li>
+    </ul>
+
+    <center>
+        <h2>Anillo de polinomios</h2>
+    </center>
+
+    <ul>
+        <li>Sea \(R\) un anillo entonces \(R[x] = \{a_{0}+a_{1}x+...+a_{m}x^{m}/a_{i} \in R, m \in \mathbb{N} \}\)</li>
+        <li>\(a_{m}\) es el coeficiente director. Si \(a_{m} = 1\) el polinomio es <strong>mónico</strong></li>
+        <li>Regla de los <strong>grados</strong> \(\delta(p(x))\). Sea \(p(x), q(x) \in R[x]\) (R anillo)
+            <ol class="custom-counter">
+                <li>\(\delta[p(x)+q(x)] \leq max(\delta[p(x)],\delta[q(x)])\)</li>
+                <li>\(\delta[p(x)q(x)] \leq \delta[p(x)] + \delta[q(x)]\)</li>
+                <li>\(\delta[p(x)q(x)] = \delta[p(x)] + \delta[q(x)] \Longleftrightarrow a_{n}b_{m} \neq 0\) coeficientes directores</li>
+            </ol>
+        </li>
+    </ul>
+
+    <center>
+        <h2>Subanillos y Ideal</h2>
+    </center>
+
+    <ul>
+        <li>Sea \((R,+,\cdot)\) un anillo y \(S \subset R\). \(\quad S\) es un <strong>subanillo</strong> de \(R\) si:
+            <ol class="custom-counter">
+                <li>\(s-t \in S \quad \forall s,t \in S \quad \) \((S,+)\) es subgrupo de \((R,+)\)</li>
+                <li>\(st \in S \quad \forall s,t \in S\)</li>
+            </ol>
+        </li>
+        <li>Si \(R\) es un cuerpo, un subanillo \(S\) de \(R\) es <strong>subcuerpo</strong> si \(\forall s \in S - \{0\} \quad \exists s^{-1} \in S\)</li>
+        <li>Sea \((R,+,\cdot)\) un anillo y \(I \subset R\).\(\quad I\) es un <strong>ideal</strong> de \(R\) si:
+            <ol class="custom-counter">
+                <li>\(s-t \in I \quad \forall s,t \in I\)</li>
+                <li>\(st \in I \text{ (a derecha) o } ts \in I \text{ (a izquierda)} \quad \forall s \in I \quad \forall t \in R\)</li>
+            </ol>
+        </li>
+        <li><strong>Propiedades</strong>
+            <ol class="custom-counter">
+                <li>La suma y la intersección de subanillos (ideales) es un subanillo (ideal)</li>
+                <li>Los ideales no contienen unidades  (\(\forall s \in I\) no tienen inverso)</li>
+                <li>Un cuerpo \(R\) <strong>no</strong> tiene ideales salvo el \(0\) y \(R\) y <strong>no</strong> hay divisores de cero</li>
+            </ol>
+        </li>
+        <li><strong>Ideal principal generado por r</strong> <br>
+            Sea \(R\) un anillo conmutativo y sea \(r \in R\) <br>
+            Entonces \((r) = Rr = \{sr | s \in R\}\) es un ideal
+        </li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 7.2</header>
+            <p>Sea \(I\) un ideal de \(R\)<br>
+            Entonces el grupo abeliano \((R/I,+)\) es un anillo con la multiplicación</p>
+            \[(r+I)(s+I) = rs + I \quad \forall r+I, s+I \in R/I\]
+    </div>
+
+        <ul>
+            <li>\(u + n\mathbb{Z}\) tiene inverso respecto de \((\cdot)\) \(\quad \Longleftrightarrow \quad mcd(u,n) =1\)</li>
+        </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 7.3</header>
+            <p>Sea \(n \in \mathbb{Z}^{+}\). Entonces \((\mathbb{Z}/n\mathbb{Z},+,\cdot)\) es un cuerpo \(\quad \Longleftrightarrow \quad n\) es primo</p>
+    </div>
+
+        <ul>
+            <li><strong>Homomorfismo de anillos</strong> es una aplicación \(f:R \to S\), \(R\) y \(S\) anillos tal que:
+                <ul>
+                    <li>\(f(x+y) = f(x) + f(y) \quad \forall x, y \in R\)</li>
+                    <li>\(f(xy) = f(x)f(y) \quad \forall x, y \in R\)</li>
+                </ul>
+            </li>
+        </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 7.4 (Teorema de isomorfía)</header>
+        <div>
+            <p>Sea \(f:R \to S\) un homomorfismo de anillos.<br>
+            Entonces \(Im(f) = f(R)\) es un <strong>subanillo</strong> de \(S\), \(ker(f)\) es un <strong>ideal</strong> de \(R\) y<br>
+            la aplicación \(\begin{array}{cc}
+            \overline{f}:R/ker(f) \to f(R) \\
+            \text{       } x+ker(f) \to f(x)
+            \end{array}\) es un <strong>isomorfismo de anillos</strong></p>
+        </div>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 7.5 (evaluación)</header>
+        <div>
+            <p>Sea \(R\) un anillo conmutativo y sea \(a \in R\)<br>
+            Entonces la aplicación \(\varphi_{a}: R[x] \to R\) definida \(\varphi_{a}(p(x)) =p(a)\) es un homomorfismo de anillos, que se llama <strong>evaluación</strong></p>
+        </div>
+    </div>
+
+    <center>
+        <h2>Raíces de polinomios</h2>
+    </center>
+    <p>Sea \(R\) un anillo conmutativo y sea \(p(x) \in R[x]\) y \(a \in R\)<br>
+    Se dice que \(a\) es la <strong>raíz</strong> de \(p(x)\) si \(p(a) = 0\)</p>
+
+    <div class="encuadrado">
+        <header>Teorema 7.6 (algoritmo de división) \(\star\)</header>
+        <p>Sea \(R\) un anillo y sean \(f, g \in R[x]\) no nulos.<br>
+        Supongamos que el coeficiente director de \(g\) es una unidad de \(R\).<br>
+        Entonces <strong>existen</strong> dos <strong>únicos</strong> \( q,r \in R[x] \quad / \quad  f = qg+r\) con \(\delta(r) < \delta(g)\)</p>
+    </div>
+
+    <ul>
+        <li>\(r|s \quad r\) <strong>divide</strong> a \(s \quad\) si \(\exists t \in R \quad / \quad rt = s \quad r, s \in R\) anillo</li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Corolario 7.7</header>
+        <p>Sea \(p(x) \in R[x]\) un \(R\) anillo conmutativo y sea \(a \in R\)<br>
+        Entonces \(p(a) = 0 \Longleftrightarrow (x-a)\) divide a \(p(x)\)</p>
+    </div>
+
+    <p>Sea \(R\) anillo, \(p(x) \in R[x]\). Si \(a\) es raíz de \(p(x)\)<br>
+    Entonces \(p(x) = (x-a)^{m}t(x)\) con \(0 \leq m \leq \delta(f)\text{, } t(x) \in R[x]\) y \(t(a) \neq 0\)<br>
+    Si \(m>1\) se dice que \(a\) es <strong>raíz múltiple</strong> de \(f\) (con <strong>multiplicidad \(m\)</strong>)</p>
+
+    <div class="encuadrado">
+        <header>Teorema 7.8 \(\star\)</header>
+        <p>Si \(R\) es un dominio de integridad y sea \(f(x) \in R[x]\) no constante.<br>
+        Si \(a_{1}, a_{2},...,a_{n}\) son raíces distintas de \(f(x) \quad \Longrightarrow \quad n \leq \delta(f)\)</p>
+    </div>
+
+    <center><h2>Anillos de polinomios</h2></center>
+
+    <div class="encuadrado">
+        <header>Teorema 7.9 (ideales principales) \(\star \star\)</header>
+        <p>Sea \(K\) un cuerpo y sea \(I\) un ideal no cero de \(K[x]\).<br>
+        Entonces <strong>existe</strong> un <strong>único</strong> \(p(x) \in K[x]\) mónico tal que \(I=(p(x))\)</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 7.10 (máximo común divisor)</header>
+        <p>Sea \(K\) un cuerpo y sean \(f,g \in K[x]\) no cero.<br>
+        Entonces existe un único polinomio <strong>mónico</strong> \(d \in K[x]\) tal que \((f) + (g) = (d)\)<br>
+        Además \(d|f\), \(d|g\) \quad y \quad si \(e\in K[x]\) tal que \(e|f\) y \(e|g  \Longrightarrow e|d \hspace{6mm} d = mcd(f,g)\)</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Corolario 7.12 (Teorema de Euclides)</header>
+        <p>Sean \(f,g \in K[x]\) no cero y \(h \in K[x]\) y supongamos que \(mcd(f,g) = 1\).<br>
+        Si \(f|gh \quad \Longrightarrow \quad f|h\)</p>
+    </div>
+
+    <ul>
+        <li>Sea \(R\) un anillo unitario, \(r \in R, r \neq 0\) y no unidad.<br>
+        \(r\) es <strong>irreducible</strong> si \(r=ab \quad \Longrightarrow \quad a\) unidad o \(b\) unidad</li>
+        <li>Sea \(K\) cuerpo y \(f \in K[x]\) irreducible y \(g \in K[x] \quad \Longrightarrow \quad mcd(f,g) = 1 \text{ o } f|g\)</li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 7.13 (factorización única) \(\star \star\)</header>
+        <p>Sea \(K\) un cuerpo y sea \(f \in K[x]\) con \(\delta(f) \geq 1\)<br>
+        Entonces \(f\) se escribe de forma <strong>única</strong> como producto de polinomios irreducibles en \(K[x]\), salvo en el orden y la multiplicación por constantes
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 7.14</header>
+        <p>Sea \(K\) cuerpo y sea \(p(x) \in K[x]\) no constante <br>
+        Entonces \(p(x)\) es irreducible \(\quad \Longleftrightarrow \quad K[x]/(p(x))\) es un cuerpo</p>
+    </div>
+
+    <center><h2>Teoremas de irreducibilidad</h2></center>
+
+    <div class="encuadrado">
+        <header>Teorema 7.17 (criterio de Eisenstein)</header>
+        <p>Sea \(f(x) = a_{0} + a_{1}x + ... + a_{n}x_{n}\), con \(a_{1} \in \mathbb{Z}, n \geq 1, a_{n} \neq 0 \text{ y } n \geq 2\). <br>
+        Supongamos que existe un <strong>primo</strong> \(p \in \mathbb{Z}\) tal que \(p|a_{i}\) para \(0 \leq i \leq n-1\), \(p\) no divide a \(a_{n}\) y \(p^{2}\) no divide a \(a_{0}\).
+        Entonces \(f(x)\) es <strong>irreducible</strong> en \(\mathbb{Q}[x]\)</p>
+    </div>
+
+    <ul>
+        <li><strong>Proposición 10.2</strong><br>
+            Supongamos que \(p \in \mathbb{Z}\) es un primo y consideramos el homomorfismo \(\bar{f}:\mathbb{Z} \to \mathbb{Z}/p\mathbb{Z}\) definido \(\bar{f}(n) = n + p\mathbb{Z}\).<br>
+            Si \(f \in \mathbb{Z}[n]\) es mónico y \(\overline{f} \in (\mathbb{Z}/p\mathbb{Z})[x]\) es irreducible, entonces \(f\) es irreducible.
+        </li>
+        <li><strong>Proposición 12</strong><br>
+            Sea \(R\) un anillo conmutativo y sea \(a \in R\).<br>
+            Sea \(f(x)=a_{0}+a_{1}x+...+a_{n}x^{n}\) y \(f(x-a) = a_{0}+a_{1}(x-a)+...+a_{n}(x-a)^{n}\).<br>
+            Si \(f(x) \in R[x]\) es irreducible, entonces \(f(x-a) \in R[x]\) es irreducible.
+        </li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 7.18</header>
+        <p>Sea \(f(x) \in K[x], f' \neq 0\) </p>
+        <ol class="custom-counter">
+            <li>\(a\) es raíz múltiple de \(f \quad \Longleftrightarrow \quad f(a) = f'(a) = 0\)</li>
+            <li>Si \(mcd(f,f') = 1 \quad \Longrightarrow \quad f\) no tiene raíces múltiples</li>
+            <li>Si \(f\) es irreducible \(\quad \Longrightarrow \quad\) todas las raíces son distintas</li>
+        </ol>
+    </div>
+
+    <center><h2>Cuerpo primo</h2></center>
+      <ul>
+        <li>\(F=\bigcap K_{0}\) <strong>cuerpo primo</strong> de \(K\) es la intersección de todos los subcuerpo de \(K\) <br>
+        \(F\) es el menor cuerpo contenido en \(K\)</li>
+      </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 7.19</header>
+        <p>Sea \(K\) un cuerpo y \(F\) su cuerpo primo \(\quad \Longrightarrow \quad F \cong \mathbb{Q} \text{ o } F \cong \mathbb{Z}/p\mathbb{Z} \quad p\) primo </p>
+        <ul>
+          <li>Para el 1er CASO \(n1 \neq 0 \quad \forall n \in \mathbb{Z}-\{0\}\) </li>
+          <li>Para el 2º CASO \(n1 = 0 \longleftrightarrow p\) divide a \(n\) </li>
+        </ul>
+    </div>
+      <ul>
+        <li>Si \(F \cong \mathbb{Q}\), decimos que la <strong>característica</strong> de \(K\) es \(0\) </li>
+        <li>Si \(F \cong \mathbb{Z}/p\mathbb{Z}\), decimos que la <strong>característica</strong> de \(K\) es \(p\)
+        </li>
+      </ul>
+
+
+  </div>
+
+</body>
+</html>

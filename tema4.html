@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tema 4</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+
+
+<body>
+  <header>
+          <h1>Álgebra Abstracta</h1>
+          <nav>
+              <ul>
+                  <li><a href="tema1.html">Tema 1</a></li>
+                  <li><a href="tema2.html">Tema 2</a></li>
+                  <li><a href="tema3.html">Tema 3</a></li>
+                  <li><a href="tema4.html">Tema 4</a></li>
+                  <li><a href="tema5.html">Tema 5</a></li>
+                  <li><a href="tema6.html">Tema 6</a></li>
+              </ul>
+          </nav>
+  </header>
+
+  <script>
+  function mostrarOcultarTexto(id) {
+    var texto = document.getElementById(id);
+    var boton = document.querySelector('.boton-mostrar');
+    if (texto.style.display === 'none' || texto.style.display === '') {
+      texto.style.display = 'block';
+      boton.textContent = 'Ocultar Demostración';
+    } else {
+      texto.style.display = 'none';
+      boton.textContent = 'Mostrar Demostración';
+    }
+  }
+  </script>
+
+  <div class="container">
+
+  <center>
+      <h1>Tema 4:</h1>
+  </center>
+  <center>
+      <h2>Grupos de permutaciones</h2>
+  </center>
+  <ul>
+      <li><strong>Grupo de permutaciones</strong> \(S_{\varOmega} = \{f:\varOmega \to \varOmega / f \text{ biyectiva}\} \quad |S_{\varOmega}| = |S_{n}| = n!\)</li>
+      <li><strong>n-ciclo</strong>: la permutación \(g = (\alpha_{1},...,\alpha_{n}) \in S_{\varOmega} \quad\) y \(\quad \alpha_{1},...,\alpha_{n} \in \varOmega\) <br> que verifica \(g(\alpha_{i}) = \alpha_{i+1}\), \(g(\alpha_{n}) = \alpha_{1}\) y \(g(\alpha) = \alpha \quad \forall \alpha \in \varOmega - \{\alpha_{1},...,\alpha_{n}\}\)</li>
+      <li><strong>Trasposiciones</strong>: 2-ciclos \((i,j)\)</li>
+      <li><strong>¿Cuantos m-ciclos tiene \(S_{n}\)?</strong> \(\dbinom{n}{m}\dfrac{m!}{m} = \dfrac{n!}{(n-m)!m}\)</li>
+      <li><strong>Ciclos disjuntos</strong> si \(\{\alpha_{1},...,\alpha_{m}\} \cap \{\beta_{1},...,\beta_{n}\} = \emptyset\)</li>
+  </ul>
+
+
+    <div class="encuadrado">
+      <header>Lema 5.1</header>
+      <p>Sea \( \varOmega \) un conjunto
+      <ol class="custom-counter">
+        <li>Sea \( g = (\alpha_{1},...,\alpha_{m}) \in S_{\varOmega} \Longrightarrow \begin{array}{cc}
+            \alpha_{1} \cdot g^{i} = \alpha_{1+i} & \text{para } 1 \leq i \leq m-1\\
+            \alpha_{1} \cdot g^{m} = \alpha_{1}
+        \end{array}\)</li>
+        <li>Si \( f = (\beta_{1},...,\beta_{n}) \in S_{\varOmega} \) es <b>disjunto</b> con \( g = (\alpha_{1},...,\alpha_{m}) \in S_{\varOmega} \Longrightarrow fg = gf \)</li>
+        <li>Si \( h=(\alpha_{1},...,\alpha_{m})\cdot\cdot\cdot(\beta_{1},...,\beta_{n}) \) es un producto de ciclos disjuntos. Sea \( H=\langle h \rangle \) entonces las orbitas de \( H \) sobre \( \varOmega \) son \( \{\alpha_{1},...,\alpha_{m}\},...,\{\beta_{1},...,\beta_{n}\} \)</li>
+      </ol>
+      <footer>
+        <button class="boton-mostrar" onclick="mostrarOcultarTexto('textoOculto1')">Mostrar Demostración</button>
+        <div class="texto-oculto" id="textoOculto1">hola</div>
+      </footer>
+      </p>
+    </div>
+
+    <div class="encuadrado">
+      <header>Teorema 5.2</header>
+      <p>Toda permutación \( S_{\varOmega} \) se puede escribir como <b>producto de ciclos disjuntos</b> dos a dos. Excepto el orden de los factores y ciclos de longitud \( 1 \)</p>
+    </div>
+
+    <div class="encuadrado">
+      <header>Corolario 5.3</header>
+      <p>Toda permutación (m-ciclo) es <b>producto de transposiciones</b></p>
+    </div>
+
+    <div class="encuadrado">
+      <header>Teorema 5.4</header>
+      <p>Supongamos que \( \sigma \in S_{\varOmega} \) se descompone como producto de ciclos disjuntos <br> \( \sigma = \tau_{1} \cdot\cdot\cdot \tau_{m} \quad \Longrightarrow \quad o(\sigma)=m.c.m.\{o(\tau_{i}) / i=1,...,m\} \)</p>
+    </div>
+
+    <div class="encuadrado">
+      <header>Lema 5.5</header>
+      <p>Supongamos que \( g=(\alpha_{1},...,\alpha_{m}) \) es un m-ciclo de \( S_{\varOmega} \) y sea \( h \in S_{\varOmega} \). Entonces:</p>
+      <p>\[ g^{h}=(\alpha_{1}\cdot h,...,\alpha_{m}\cdot h) \hspace{10mm} g^{h}=h^{-1} g h \]</p>
+    </div>
+
+
+
+
+      <ul>
+        <li><strong>Estructura de ciclos</strong> de \(g=(\alpha_{1},...,\alpha_{m}) \cdot\cdot\cdot (\beta_{1},...,\beta_{n}) =\) (el producto de ciclos disjuntos) es la lista de la longitud de los ciclos ordenados de menor a mayor</li>
+        <li>\(S_{\varOmega}\) tiene tantas <strong>clases de conjugaciones</strong> como tipos de permutaciones</li>
+      </ul>
+
+
+      <div class="encuadrado">
+          <header>Teorema 5.6</header>
+          <p>Dos permutaciones \(f,g \in S_{\varOmega}\) son conjugados \(\quad \Longleftrightarrow \quad\) tienen la misma estructura de ciclos (son del mismo tipo)</p>
+      </div>
+
+
+          <h2><center>Inversiones y signatura</center></h2>
+              <ul>
+                  <li>Sea \( \varOmega=\{1,...,n\} \quad |\varOmega| = n \)</li>
+                  <li>Sea \( C =\{X \subseteq \varOmega / |X|=2\} \) conjunto de subconjuntos de \( \varOmega \) con 2 elementos </li>
+                  <li>Sea \( X=\{i,j\} \in C \quad \text{y} \quad \sigma \in S_{\varOmega} \)
+                      <ul>
+                          <li>Si signo(\(i-j\)) = signo(\(\sigma(i)-\sigma(j)\)) \( \Longrightarrow \sigma \) no invierte a \(X\) y \(inv_{\sigma}(X)=0\)</li>
+                          <li>Si signo(\(i-j\)) \(\neq\) signo(\(\sigma(i)-\sigma(j)\)) \( \Longrightarrow \sigma \) invierte a \(X\) y \(inv_{\sigma}(X)=1\)</li>
+                      </ul>
+                  </li>
+                  <li><strong>Signatura</strong> sig(\(\sigma\)) \(=(-1)^{\textstyle\sum_{X\in C} inv_{\sigma}(X)}\) <br>
+                      Decimos que \( \sigma \) es <strong>par</strong> si \( sig(\sigma) = 1 \) y que \( \sigma \) es <strong>impar</strong> si \( sig(\sigma) = -1 \)
+                  </li>
+              </ul>
+
+      <div class="encuadrado">
+          <header>Teorema 5.8</header>
+          <p>Si \( \sigma, \tau \in S_{\varOmega} \quad \Longrightarrow \quad sig(\sigma)sig(\tau) = sig(\sigma\tau) \) <br>
+          Como consecuencia \( \rho :S_{n} \to C_{2} \cong \{-1,1\} \) es un homomorfismo de grupos</p>
+      </div>
+
+      <div class="encuadrado">
+          <header>Lema 5.9</header>
+          <p>La signatura de un \( m \)-ciclo es \( (-1)^{m-1} \)</p>
+      </div>
+
+      <div class="encuadrado">
+          <header>Corolario 5.10</header>
+          <ol class="custom-counter">
+              <li> \( \sigma \) es <strong>par</strong> si y solo si \( \sigma \) puede escribirse como producto de un número par de trasposiciones. En otro caso, \( \sigma \) es impar. </li>
+              <li> \( \sigma \) es <strong>par</strong> si y solo si en la descomposición de \( \sigma \) como producto de ciclos disjuntos, el número de ciclos de longitud par es par </li>
+          </ol>
+      </div>
+
+
+      <center>
+          <h2>El grupo alternado</h2>
+      </center>
+      <ul>
+          <li><strong>Homomorfismo signatura</strong>: \(sig:S_{n} \to \{1,-1\}=C_{2}\)</li>
+          <li><strong>Grupo alternado de grado \(n\)</strong>: conjunto de permutaciones pares <br> \(A_{n}=ker(sig) = \{\sigma \in S_{n} / sig(\sigma) = 1\}\)</li>
+          <li><strong>NOTA</strong>: \(A_{n} \trianglelefteq S_{n}\). Por \(1^{er}\) Tª de isomorfia: <br>
+              \(S_{n}/A_{n} \cong C_{2} \quad \to \quad |S_{n}/A_{n}| = |S_{n}:A_{n}| = |C_{2}| = 2 \quad \to \quad |A_{n}| = \frac{|S_{n}|}{2} = \frac{n!}{2}\)</li>
+      </ul>
+
+
+      <div class="encuadrado">
+          <header>Teorema 5.12 (NO ENTRA)</header>
+          <p>Si \(n \geq 5 \quad \Longrightarrow \quad A_{n}\) es simple no abeliano</p>
+      </div>
+
+      <div class="encuadrado">
+          <header>Teorema 5.7</header>
+          <p>Sea \(|\varOmega| \geq 3 \quad \Longrightarrow \quad \textbf{Z}(S_{\varOmega}) = \{id\}\) trivial</p>
+      </div>
+
+      <div class="encuadrado">
+          <header>Teorema 5.13</header>
+          <p>Si \(n \geq 5 \quad \Longrightarrow \quad A_{n}\) es el único normal propio de \(S_{n}\)</p>
+      </div>
+
+</div>
+
+</body>
+</html>

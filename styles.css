@@ -1,0 +1,129 @@
+body {
+  font-size: 20px; /* Tamaño de fuente global para todo el cuerpo del documento */
+}
+.container {
+  margin: 0 auto; /* Centrar horizontalmente */
+  max-width: 800px; /* Máximo ancho del contenido */
+  padding: 20px; /* Márgenes internos */
+}
+ul, ol {
+  margin-top: 20px; /* Separación superior entre la lista y el párrafo */
+  margin-bottom: 20px; /* Separación inferior entre la lista y el párrafo */
+}
+li {
+  margin-bottom: 10px; /* Separación entre elementos de la lista */
+}
+.encuadrado {
+  border: 2px solid #092635; /* Grosor y color del borde */
+  padding-top: 10px; /* Espacio interno superior */
+  padding-bottom: 0; /* Espacio interno inferior */
+  padding-left: 30px; /* Espacio interno izquierdo */
+  padding-right: 30px; /* Espacio interno derecho */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #f0f0f0; /* Color de fondo */
+  margin: 20px auto; /* Margen externo para centrar el encuadrado */
+}
+.encuadrado header {
+  display: block; /* Convertir el header en un elemento de bloque */
+  background-color: #092635; /* Color de fondo del encabezado ANTES: #404040*/
+  border-bottom: 2px solid #092635; /* Borde inferior del encabezado */
+  padding-top: 5px; /* Espacio interno superior */
+  padding-bottom: 5px; /* Espacio interno inferior */
+  padding-left: 30px; /* Espacio interno izquierdo */
+  padding-right: 30px; /* Espacio interno derecho */
+  border-radius: 5px 5px 0 0; /* Bordes redondeados superior del encabezado */
+  margin-bottom: 20px; /* Espacio entre el encabezado y el contenido */
+  color: #fff; /* Color del texto */
+  font-weight: bold; /* Texto en negrita */
+  margin-left: -30px; /* Compensar el padding izquierdo del contenedor */
+  margin-right: -30px; /* Compensar el padding derecho del contenedor */
+  margin-top: -10px; /* Compensar el padding derecho del contenedor */
+  text-align: left;
+}
+.encuadrado .linea-punteada {
+  border-bottom: 1px dashed #092635; /* Línea punteada */
+  margin-bottom: 15px; /* Espacio después de la línea punteada */
+  margin-top: 15px; /* Espacio antes de la línea punteada */
+  margin-left: -60px; /* Compensar el padding izquierdo del contenedor */
+  margin-right: -30px; /* Compensar el padding derecho del contenedor */
+}
+.encuadrado footer {
+  display: block; /* Convertir el footer en un elemento de bloque */
+  background-color: #9EC8B9; /* Color de fondo del footer */
+  border-top: 2px solid #092635; /* Borde superior del footer */
+  padding: 10px 0; /* Espacio interno del footer */
+  border-radius: 0 0 8px 8px; /* Bordes redondeados inferior del footer */
+  margin-top: 20px; /* Espacio entre el footer y el contenido */
+  color: #000; /* Color del texto */
+  margin-left: -30px; /* Compensar el padding izquierdo del contenedor */
+  margin-right: -30px; /* Compensar el padding derecho del contenedor */
+  margin-bottom: -20px; /* Compensar el padding derecho del contenedor */
+  padding-left: 30px; /* Espacio interno izquierdo */
+  padding-right: 30px; /* Espacio interno derecho */
+}
+/*Para enumerar a) */
+ol.custom-counter {
+  list-style: none;
+  counter-reset: custom-counter;
+  padding-left: 15px; /* Eliminar el relleno izquierdo predeterminado */
+  margin-left: 15px; /* Eliminar el margen izquierdo predeterminado */
+}
+ol.custom-counter li {
+  text-indent: -25px; /* Retroceder la primera línea para compensar el margen izquierdo del marcador de enumeración */
+}
+ol.custom-counter li:before {
+  content: counter(custom-counter, lower-alpha) ") ";
+  counter-increment: custom-counter;
+  margin-right: 5px; /* Margen derecho para separar el texto */
+}
+/* Estilos para el botón */
+.boton-mostrar {
+  background-color: #1B4242;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-mostrar:hover {
+  background-color: #5C8374;
+}
+.texto-oculto {
+  display: none;
+}
+.tabulado {
+    text-indent: 0px; /* Establecer una sangría de 0 píxeles */
+}
+/*Estilo del encabezado*/
+header {
+    background-color: #092635;
+    color: #fff;
+    padding-top: 1px;     /* Padding de 10 píxeles arriba */
+    padding-bottom: 25px;  /* Padding de 15 píxeles abajo */
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+color: #fff;
+text-decoration: none;
+padding: 5px 10px;
+border: 1px solid #fff;
+border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: #333;
+}

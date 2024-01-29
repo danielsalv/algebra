@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tema 3</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+
+
+<body>
+  <header>
+          <h1>Álgebra Abstracta</h1>
+          <nav>
+              <ul>
+                  <li><a href="tema1.html">Tema 1</a></li>
+                  <li><a href="tema2.html">Tema 2</a></li>
+                  <li><a href="tema3.html">Tema 3</a></li>
+                  <li><a href="tema4.html">Tema 4</a></li>
+                  <li><a href="tema5.html">Tema 5</a></li>
+                  <li><a href="tema6.html">Tema 6</a></li>
+              </ul>
+          </nav>
+  </header>
+
+  <script>
+  function mostrarOcultarTexto(id) {
+    var texto = document.getElementById(id);
+    var boton = document.querySelector('.boton-mostrar');
+    if (texto.style.display === 'none' || texto.style.display === '') {
+      texto.style.display = 'block';
+      boton.textContent = 'Ocultar Demostración';
+    } else {
+      texto.style.display = 'none';
+      boton.textContent = 'Mostrar Demostración';
+    }
+  }
+  </script>
+
+<div class="container">
+
+  <center><h1>Tema 3:</h1></center>
+
+  <center><h2>Acciones de grupos</h2></center>
+
+  <ul>
+    <li>
+      \(G\) <strong>actua</strong> sobre \(\varOmega \quad \Longleftrightarrow \quad \alpha \cdot g \in \varOmega\ \quad \forall \alpha \in \varOmega\) un conjunto y \(\forall g \in G\) un grupo <br> Y decimos que \(\cdot\) define una <strong>acción</strong> de \(G\) sobre \(\varOmega\) si:
+      <ol class="custom-counter">
+        <li>\((\alpha \cdot g) \cdot h = \alpha \cdot (gh) \quad \forall \alpha \in \varOmega \quad \forall g,h \in G\)</li>
+        <li>\(\alpha \cdot 1 = \alpha \quad \forall \alpha \in G\)</li>
+      </ol>
+    <li><strong>Núcleo de la acción</strong>: \(K=\{g \in G / \alpha \cdot g = \alpha \quad \forall \alpha \in \varOmega\} = ker(\rho)\) <br> Si \(K=1\) la acción se dice <strong>fiel</strong> (núcleo trivial)</li>
+    <li>\(S_{\varOmega} = \{f:\varOmega \to \varOmega / f \text{ inyectiva}\} \quad |S_{n}| = n!\)</li>
+  </ul>
+
+
+  <div class="encuadrado"><header>Teorema 4.1</header>
+    <p>
+    <ol class="custom-counter">
+    <li>
+    Supongamos que \(G\) actua sobre \(\varOmega\). Para \(g \in G\),
+    \(
+    \begin{array}{cc}
+    \rho_{g}:\varOmega \to \varOmega \\
+    \rho_{g}(\alpha) = \alpha \cdot g \\
+    \end{array}
+    \)</p><p class="tabulado">
+    Entonces \(\rho_{g}\) es <strong>biyectiva</strong> y
+    \(
+    \begin{array}{cc}
+    \rho: G \to S_{\varOmega}\\
+    \rho(g) = \rho_{g} \\
+    \end{array}
+    \)
+    es un <strong>homomorfismo</strong> de grupos
+    <p></p>
+    </li>
+
+    <div class="linea-punteada"></div>
+
+    <li>
+    Supongamos que \(\rho: G \to S_{\varOmega}\) es un homomorfismo de grupos <br>
+    Para cada \(g \in G\) y \(\alpha \in \varOmega\), definimos \(\alpha \cdot g = \rho(g)(\alpha)\) <br>
+    Entonces \(\cdot\) define una <strong>acción</strong> de \(G\) sobre \(\varOmega\)
+    </li>
+    </ol>
+
+    <footer>
+    <!-- Botón para mostrar/ocultar el texto oculto -->
+    <button class="boton-mostrar" onclick="mostrarOcultarTexto('textoOculto1')">Mostrar Demostración</button>
+
+    <!-- Texto que se mostrará/ocultará -->
+    <div class="texto-oculto" id="textoOculto1">
+      <ol class="custom-counter">
+        <li> ¿\(\rho\) homomorfismo y \(\rho_{g}\) biyectiva?
+          <p>\(\rho_{g}\rho_{h}(\alpha) = \rho_{h} \circ \rho_{g}(\alpha) = \rho_{h}(\rho_{g}(\alpha)) = \rho_{h}(\alpha \cdot g) = (\alpha \cdot g) \cdot h = \alpha \cdot (gh) = \rho_{gh}(\alpha)\)</p>
+          <p>\(\rho_{g}\rho_{g^{-1}} = \rho_{gg^{-1}} = \rho_{1} = id_{\alpha} \quad \Longrightarrow \quad \rho_{g^{-1}} \text{ inversa de } \rho_{g} \quad \Longrightarrow \quad \rho_{g}\) biyectiva</p>
+        </li>
+        <li>¿Define una acción?</li>
+          <p class="tabulado">\(\alpha \cdot 1 = \rho(1)(\alpha) = \rho_{1}(\alpha) = id_{\varOmega}(\alpha) = \alpha\)</p>
+          <p class="tabulado">\((\alpha \cdot g)\cdot h = (\rho(g)(\alpha)) \cdot h = \rho(h)(\rho(g)(\alpha))\)</p>
+      </ol>
+    </div>
+    </footer>
+  </p></div>
+
+
+  <div class="encuadrado"><header>Teorema 4.2</header>
+    <p>Sea \(H \leq G \Longrightarrow \bigcap_{x \in G} H^{x}\) es el <strong>núcleo</strong> de la acción de \(G\) sobre \(\{ Hx/x \in G \}\).</p>
+  </div>
+
+
+  <div class="encuadrado"><header>Teorema 4.3 (Cayley)</header>
+  <p>Si \(H \leq G\) con \( |G:H|=n \quad \Longrightarrow \quad \exists K \trianglelefteq G, K \subseteq H \quad t.q. \quad G/K \cong \) subgrupo \( S_{n}\)
+    <ul>
+      <li>En particular, Si \(|G|=n \quad \Longrightarrow \quad G \cong\) un subgrupo de \(S_{n}\)</li>
+    </ul>
+  </p></div>
+
+  <div class="encuadrado"><header>Corolario 4.4</header>
+  <p>Sea \(G\) finito simple. Si \(H \leq G\) y \(|G:H|=n \quad \Longrightarrow \quad G \cong\) un subgrupo de \(S_{n}\)
+    <ul>
+      <li>En particular \(|G|\) divide a \(n!\)</li>
+    </ul>
+  </p></div>
+
+  <center><h2>Orbitas y estabilizadores</h2></center>
+
+  <ul>
+    <li><strong>Relación de equivalencia</strong> de \(\alpha, \beta \in \varOmega \quad\) Si \(\exists g \in G / \alpha \cdot g = \beta \quad \Longrightarrow \quad \alpha \sim \beta\) <br>
+    \(\alpha \sim \beta\) es simétrica (\(\beta \sim \alpha\)), reflexiva (\(\alpha \sim \alpha\)) y transitiva (\(\beta \sim \gamma \to \alpha \sim \gamma\))</li>
+    <li><strong>Órbita</strong> \(\quad O(\alpha) = \{\beta \in \varOmega / \beta \sim \alpha\} = \{\alpha \cdot g / \forall g \in G\} \qquad \varOmega = \underset{\alpha \in \triangle}{\bigcup} O(\alpha)\) disjunta</li>
+    <li><strong>Estabilizador</strong>  \(\quad G_{\alpha}=\{g \in G / \alpha \cdot g = \alpha\} = Stab_{G}(\alpha)\)</li>
+    <li><strong>Fijados</strong>  \( \quad Fix(\varOmega) = \{\alpha \in \varOmega / |O(\alpha)| = 1\} = \{\alpha \in \varOmega / \alpha \cdot g = \alpha \quad \forall g \in G\}\)</li>
+  </ul>
+
+  <div class="encuadrado"><header>Teorema 4.5 (órbita-estabilizador)</header>
+  <p>Supongamos que \(G\) actúa sobre \(\varOmega\). Entonces
+    <ol class="custom-counter">
+      <li>\(G_{\alpha} \leq G\)</li>
+      <li>\(|O(\alpha)|=|G:G_{\alpha}|\)</li>
+    </ol>
+  </p></div>
+
+  <div class="encuadrado"><header>Teorema 4.6</header>
+  <p>Si \(G\) actúa sobre \(\varOmega\) un conjunto finito <br>
+    Sea \(\alpha_{1},...,\alpha_{s}\) representantes de las orbitas de cardinal mayor que 1 <br>
+    \(|\varOmega| = |Fix(\varOmega)|+\sum_{i=1}^{s}|O(\alpha_{i})|\) <br>
+    Si \(G\) es un p-grupo finito \(|G|=p^{n} \hspace{1mm} p \text{ primo y }  n \geq 1\quad \Longrightarrow \quad |\varOmega|\equiv|Fix(\varOmega)|\text{mod } p\)
+  </p></div>
+
+  <center><h2>Acción de conjugación</h2></center>
+  <p>Acción de conjugación es la acción de \(G\) sobre \(G \quad \to \quad x \cdot g = x^{g} = g^{-1}xg \quad x, g \in G\)
+    <ul>
+      <li><strong>Clase de conjugación de \(x\)</strong>  \(\quad O(x)=cl_{G}(x)=\{x\cdot g / g \in G\} = \{x^{g} / g \in G\}\)</li>
+      <li><strong>Centralizador en \(G\) de \(x\)</strong> \(\quad G_{x}=C_{G}(x)=\{g \in G / x^{g}=x\}=\{g \in G /xg=gx\}\)</li>
+      <li>\(Fix(G)=\{x \in G / x^{g}=x \quad \forall g \in G\}=\{x \in G /xg=gx \quad \forall g \in G\}=\textbf{Z}(G) %= \underset{x \in G}{\bigcap} C_{G}(x)
+      \)</li>
+      <li><strong>Normalizador de \(H\) en \(G\)</strong>. Si \(H \leq G \quad \Longrightarrow \quad N_{G}(H) = \{g \in G / H^{g} = H\}\) <br>
+      Se verifica \(H \trianglelefteq N_{G}(H)\quad\)  y  \(\quad H \trianglelefteq G \Longleftrightarrow N_{G}(H) = G\)</li>
+    </ul>
+  </p>
+
+  <div class="encuadrado">
+  <header>Teorema 4.7 (ecuación de clases en grupos finitos)</header></p>
+  <p>Sea \(G\) un grupo finito y sea \(K_{1},...,K_{s}\) las clases de conjugación de \(G\), \(|K_{j}| > 1\)</p>
+  <p>\[|G|=|\textbf{Z}(G)|+\sum_{j=1}^{s}|K_{j}|\]</p>
+</div>
+
+<div class="encuadrado">
+  <header>Teorema 4.8</header>
+  <p>Si \(G\) es un p-grupo finito \(|G|=p^{n}\), entonces \(\textbf{Z}(G) \neq 1\)</p>
+</div>
+
+<div class="encuadrado">
+  <header>Corolario 4.9</header>
+  <p>Si \(G\) es un p-grupo finito simple, entonces \(|G| = p\)</p>
+</div>
+
+<div class="encuadrado">
+  <header>Teorema 4.10</header>
+  <p>Sea \(G\) un grupo finito. Si \(H \leq G\), \(|H|=p^{a}\), entonces \(|G:H| \equiv |N_{G}(H):H|\text{mod } p\)</p>
+</div>
+
+<div class="encuadrado">
+  <header>Corolario 4.11</header>
+  <p>Sea \(G\) un p-grupo finito. Si \(H \lneq G\), entonces \(H \lneq N_{G}(H)\)</p>
+</div>
+
+<ul>
+  <li>Una <strong>acción</strong> de \(G\) sobre \(\varOmega\) es <strong>transitiva</strong> si existe una única órbita</li>
+  <p>\[\forall \alpha, \beta \in \varOmega \quad \exists g \in G / \alpha \cdot g = \beta\]</p>
+</ul>
+
+<div class="encuadrado">
+  <header>Teorema 4.13</header>
+  <ol class="custom-counter">
+    <li>\((G_{\alpha})^{g} = G_{\alpha g}\)</li>
+    <li>Si la <strong>acción</strong> es <strong>transitiva</strong>, entonces todos los estabilizadores son <strong>conjugados</strong>. En particular \(G_{\beta} \cong G_{\alpha}\) (isomorfos)</li>
+    <li>Si además, \(G\) <strong>abeliano</strong>, todos los <strong>estabilizadores</strong> son <strong>iguales</strong> \(G_{\beta} = G_{\alpha}\)</li>
+  </ol>
+</div>
+
+
+
+</div>
+</body>
+</html>

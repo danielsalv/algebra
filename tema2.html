@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tema 2</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+
+
+<body>
+  <header>
+          <h1>Álgebra Abstracta</h1>
+          <nav>
+              <ul>
+                  <li><a href="tema1.html">Tema 1</a></li>
+                  <li><a href="tema2.html">Tema 2</a></li>
+                  <li><a href="tema3.html">Tema 3</a></li>
+                  <li><a href="tema4.html">Tema 4</a></li>
+                  <li><a href="tema5.html">Tema 5</a></li>
+                  <li><a href="tema6.html">Tema 6</a></li>
+              </ul>
+          </nav>
+  </header>
+
+  <script>
+  function mostrarOcultarTexto(id) {
+    var texto = document.getElementById(id);
+    var boton = document.querySelector('.boton-mostrar');
+    if (texto.style.display === 'none' || texto.style.display === '') {
+      texto.style.display = 'block';
+      boton.textContent = 'Ocultar Demostración';
+    } else {
+      texto.style.display = 'none';
+      boton.textContent = 'Mostrar Demostración';
+    }
+  }
+  </script>
+
+  <div class="container">
+    <center>
+        <h1>Tema 2:</h1>
+    </center>
+    <center>
+        <h2>Homomorfismos de grupos</h2>
+    </center>
+    <ul>
+        <li>Sea \(G\) y \(H\) dos grupos. La aplicación \(f: G \to H\) es un <strong>homomorfismo</strong> de grupos si: \(f(xy) = f(x)f(y) \quad \forall x,y \in G\)</li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Lema 3.1</header>
+        <p>Sea \(f:G\to H\) un homomorfismo de grupos
+            <ol class="custom-counter">
+                <li>\(f(1_{G})=1_{H}\)</li>
+                <li>\(f(x^{-1})=f(x)^{-1} \quad \forall x \in G\)</li>
+                <li>Si \(X \leq G \to f(X) \leq H\) y si \(Y \leq H \to f^{-1}(Y) \leq G\)</li>
+                <li>\( f(x^{n}) = f(x)^{n} \quad \forall n \in \mathbb{Z}\) y \( x \in G\). En particular \(f(\langle x \rangle) = \langle f(x) \rangle\)</li>
+                <li>\(x \in G\). Si \(o(x)=n\) finito \(\quad \Longrightarrow \quad o(f(x))\) divide a \(n\)</li>
+            </ol>
+        </p>
+    </div>
+
+    <ul>
+        <li>Según el tipo de aplicación, un homomorfismo de grupos \(f:G\to H\) es un
+            <ul>
+                <li>monomorfismo si \(f\) es inyectiva</li>
+                <li>epimorfismo si \(f\) es sobreyectiva</li>
+                <li>isomorfismo si \(f\) es biyectiva \(\quad G \cong H\)</li>
+                <li>endomorfismo si \(G=H\)</li>
+                <li>automorfismo si \(G=H\) y \(f\) es biyectiva</li>
+            </ul>
+        </li>
+        <li>Sea \(f:G \to H\) homomorfismo de grupos se define
+            <ul>
+                <li>Núcleo de \(f\): \(Ker(f) = \{g \in G / f(g)=1_{H}\}\) \(\quad ker(f) \leq G\)</li>
+                <li>Imagen de \(f\): \(Im(f) = \{f(g) \in H / g \in G\} = f(G)\) \(\quad Im(f) \leq H\)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 3.2</header>
+        <p>
+            <ol class="custom-counter">
+                <li>Si \(f:G \to H\) es un homomorfismo de grupos \(\quad \Longrightarrow \quad ker(f) \trianglelefteq G\)</li>
+                <li>\(f\) es inyectiva \(\quad \Longleftrightarrow \quad ker(f)=1\) (trivial)</li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 3.3 (1º teorema de isomorfía)</header>
+        <p>
+            Sea \(f:G\to H\) un homomorfismo de grupos <br>
+            La aplicación \(\bar{f}:G/ker(f) \to Im(f)\) definida por \(\bar{f}(ker(f)x) = f(x)\) <br>
+            es un isomorfismo de grupos
+            \[G/ker(f) \cong Im(f)\]
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Lema 3.4</header>
+        <p>
+            Sea \(N \trianglelefteq G\) y sea \(\pi:G \to G/N\) el homomorfismo \(\pi(g)=Ng\) (proyección canónica) <br>
+            Si \(H \leq G \quad \Longrightarrow \quad \pi(H)=\pi(NH)=NH/N \leq G/N\)
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 3.5 (2º teorema de isomorfía)</header>
+        <p>
+            Sea \(N \trianglelefteq G\) y \(H \leq G \quad \Longrightarrow \quad N\cap H \trianglelefteq H \quad\) y \(\quad H/N\cap H \cong HN/N\)
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 3.6 (3º teorema de isomorfía)</header>
+        <p>
+            Sean \(N, M \trianglelefteq G\) con \(N \leq M \quad \Longrightarrow \quad \dfrac{G/N}{M/N} \cong G/M\)
+        </p>
+    </div>
+
+    <center>
+        <strong>Grupos de automorfismos</strong>
+    </center>
+    <ul>
+        <li>\(Aut(G) = \{f:G \to G / f \text{ es automorfismo} \}\) (conjunto de automorfismos de \(G\)) \((Aut(G),\cdot)\) es un grupo con la operación \(\alpha \beta = \beta \circ \alpha \)</li>
+        <li>Conjugado de \(x\) por \(g \quad \Longrightarrow \quad x^{g}=g^{-1}xg \quad g,x \in G\)</li>
+        <li>La aplicación conjugación por \(g \quad \alpha_{g}:G \to G\) dada por \(\alpha_{g}(x)=x^{g}\)</li>
+        <li>Automorfismos internos de \(G \quad Int(G)=\{\alpha_{g}|g \in G\}\)</li>
+        <li>El centro de \(G\) es \(\textbf{Z}(G) = \{x \in G | xg=gx \quad \forall g \in G\}\)</li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 3.8</header>
+        <p>
+            Sea \(G\) un grupo \(g \in G\)
+            <ol  class="custom-counter">
+                <li>La aplicación \(\alpha_{g}:G \to G\) es un automorfismo de \(G\)
+                    <br>
+                    Se verifica \((xy)^{g} = x^{g}y^{g} \quad \forall x,y \in G\)
+                </li>
+                <li>Si \(h \in G \quad \Longrightarrow \quad \alpha_{g} \cdot \alpha_{h} = \alpha_{gh}\)
+                    <br>
+                    En particular, si \(x \in G \Longrightarrow (x^{g})^{h}=x^{gh}\)
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 3.9</header>
+        <p>
+            Sea \(G\) un grupo
+            <ol  class="custom-counter">
+                <li>\(Int(G) \trianglelefteq Aut(G)\)</li>
+                <li>\(Int(G) \cong G/\textbf{Z}(G)\)</li>
+            </ol>
+        </p>
+    </div>
+
+    <center>
+        <strong>Automorfismos de grupos cíclicos</strong>
+    </center>
+    <ul>
+        <li>Si \(G\) es cíclico \(\quad \Longrightarrow \quad Aut(G)\) es abeliano</li>
+        <!--<li><strong>Grupo cociente</strong>: \(\mathbb{Z}/n\mathbb{Z} = \{m+n\mathbb{Z} / m \in \mathbb{Z}\}\)</li>-->
+        <li><strong>\(U_{n}\)</strong> es el conjunto de elementos de \(\mathbb{Z}/n\mathbb{Z}\) que tienen inverso respecto del producto
+            \(U_{n}=\{m+n\mathbb{Z} \in \mathbb{Z}/n\mathbb{Z}\quad  | \text{ tienen inverso } \Longleftrightarrow mcd(n,m)=1\} \quad (U_{n},\cdot)\) es un grupo</li>
+        <li>\(C_{n}\) es un grupo cíclico de orden \(n\)</li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Lema 3.10</header>
+        <p>
+            Sea \(u \in \mathbb{Z} \quad u+n\mathbb{Z}\) es invertible en \(\mathbb{Z}/n\mathbb{Z} \quad \Longleftrightarrow \quad mcd(u,n)=1\)
+            <br>
+            En particular \(|U_{n}| = \varphi(n)\)
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Corolario 3.11</header>
+        <p>
+            Si \(n \geq 1 \quad \Longrightarrow \quad Aut(C_{n}) \cong U_{n}\)
+        </p>
+    </div>
+
+
+  </div>
+</body>
+</html>

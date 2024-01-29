@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tema 6</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+
+
+<body>
+  <header>
+          <h1>Álgebra Abstracta</h1>
+          <nav>
+              <ul>
+                  <li><a href="tema1.html">Tema 1</a></li>
+                  <li><a href="tema2.html">Tema 2</a></li>
+                  <li><a href="tema3.html">Tema 3</a></li>
+                  <li><a href="tema4.html">Tema 4</a></li>
+                  <li><a href="tema5.html">Tema 5</a></li>
+                  <li><a href="tema6.html">Tema 6</a></li>
+              </ul>
+          </nav>
+  </header>
+
+  <script>
+  function mostrarOcultarTexto(id) {
+    var texto = document.getElementById(id);
+    var boton = document.querySelector('.boton-mostrar');
+    if (texto.style.display === 'none' || texto.style.display === '') {
+      texto.style.display = 'block';
+      boton.textContent = 'Ocultar Demostración';
+    } else {
+      texto.style.display = 'none';
+      boton.textContent = 'Mostrar Demostración';
+    }
+  }
+  </script>
+
+  <div class="container">
+    <center>
+        <h1>Tema 6:</h1>
+    </center>
+    <center>
+        <h2>Extensiones de cuerpos</h2>
+    </center>
+    <ul>
+        <li><strong>Extensión</strong>: Sean \(K\) y \(E\) dos cuerpos. Se dice que \(E\) es una extensión de \(K\) si \(K \subseteq E\) (\(K\) es un subcuerpo de \(E\)), se denota \(E/K\)</li>
+        <li>Dada una extensión de cuerpos  \(E/K\) se tiene que \(E\) es un <strong>\(K\)-espacio vectorial</strong></li>
+        <li><strong>Dimensión de \(E\) sobre \(K\)</strong>: \(dim_{K}(E) = |E:K|\) (<strong>grado</strong> de la extensión)</li>
+        <li>Si la dimensión es <strong>finita</strong> \(\to\) se dice que \(E/K\) es <strong>finita</strong></li>
+        <li>Sea \(E/K\) una extensión. Entonces \(|E:K|=1 \Longleftrightarrow E=K\)</li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 9.1 (Transitividad de grados)</header>
+        <p>Sea \(E/K\) una extensión de cuerpos y sea \(L\) un cuerpo intermedio (\(K \subseteq L \subseteq E\)) <br>
+        Entonces \(E/K\) es <strong>finita</strong> \(\Longleftrightarrow\) \(L/K\) y \(E/L\) son <strong>finitas</strong>. \[|E:K| = |E:L||L:K|\]</p>
+    </div>
+
+    <center>
+        <h2>Cuerpos de adjunción</h2>
+    </center>
+    <ul>
+        <li>Sea \(E/K\) una extensión de cuerpos.<br>
+            Sea \(a \in E\) se llama <strong>cuerpo de adjunción</strong> de \(A\) a \(K\)<br>
+            Llamaremos a \(K(a)\) al <strong>menor subcuerpo</strong> de \(E\) que contiene a \(K\) y a \(a\)<br>
+            \(K(a) = \bigcap L \quad K, a \subseteq L\) subcuerpo de \(E\)
+        </li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 9.1 bis</header>
+        <p>Si \(E/K\) extensión y \(a \in E\). Entonces
+        \[K(a)=\left\{\frac{f(a)}{g(a)}, f,g \in K[x] \text{ y } g(a) \neq 0\right\} \subseteq E\]</p>
+    </div>
+
+    <ul>
+        <li>Sea \(E/K\) una extensión de cuerpo y sean \(a_{1},...,a_{n} \in E\). Se define \(K(a_{1},...,a_{n})\) como el <strong>menor cuerpo</strong> de \(E\) que contiene a \(a_{1},...,a_{n}\) y a \(K\)</li>
+        <li>Se verifica \(K(a_{1},...,a_{n}) = (K(a_{1},...,a_{k}))(a_{k+1},...,a_{n})\)</li>
+        <li>Sea \(E/K\) una extensión de cuerpo y sea \(a\in E\)
+            <ul>
+                <li>\(a\) es <strong>algebraico</strong> sobre \(K\) si \(a\) es raíz de un polinomio \(0 \neq p(x) \in K[x]\)</li>
+                <li>\(a\) es <strong>transcendente</strong> sobre \(K\), en caso contrario</li>
+            </ul>
+        </li>
+        <li>Se dice que \(E/K\) es <strong>algebraica</strong> si todo elemento de \(E\) es algebraico sobre \(K\)<br>
+            En caso contrario diremos que es <strong>transcendente</strong>
+        </li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 9.2</header>
+        <p>Si \(E/K\) es finita \(\quad \Longrightarrow \quad\) \(E/K\) es algebraica</p>
+    </div>
+
+    <ul>
+        <li>Sea \(E/K\) una extensión de cuerpos y sea \(a \in E\)<br>
+            Entonces \(K(a)\) se llama <strong>extensión simple</strong> de \(K\)
+        </li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Teorema 9.3 (elemento algebraico)</header>
+        <p>Sea \(E/K\) una extensión de cuerpo y sea \(a \in E\) algebraico sobre \(K\)</p>
+        <ol class="custom-counter">
+            <li>Existe un único polinomio mónico \(p(x) \in K[x]\) irreductible tal que \(p(a) = 0\)</li>
+            <li>Si \(q(x) \in K[x]\). Entonces \(q(a) = 0 \quad \Longleftrightarrow \quad p\) divide a \(q\)</li>
+            <li>\(K(a) = \left\{\frac{f(a)}{f} \mid f \in K[x]\right\}\)</li>
+            <li>Si \(\delta[p(x)] = n\), entonces \(\{1,a,a^{2},...,a^{n-1}\}\) es una \(K\)-base de \(K(a)\).
+                Por tanto \(|K(a):K| = n = \delta(p(x)) \quad\) y \(\quad K(a) = \{k_{0}+k_{1}a+...+k_{n-1}a^{n-1} \mid k_{i} \in K\}\)</li>
+        </ol>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 9.4</header>
+        <p>Sea \(E/K\) una extensión y sean \(a_{1},...,a_{n} \in E\) algebraicos sobre \(K\).<br>
+        Entonces \(|K(a_{1},...,a_{n}):K|\) es <strong>finita</strong></p>
+        <p>Toda extensión generada por un número finito de elementos algebraicos es finita</p>
+    </div>
+
+    <center>
+        <h2>Grupos finitos</h2>
+    </center>
+
+  </div>
+</body>
+</html>

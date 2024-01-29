@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tema 1</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+
+
+<body>
+  <header>
+          <h1>Álgebra Abstracta</h1>
+          <nav>
+              <ul>
+                  <li><a href="tema1.html">Tema 1</a></li>
+                  <li><a href="tema2.html">Tema 2</a></li>
+                  <li><a href="tema3.html">Tema 3</a></li>
+                  <li><a href="tema4.html">Tema 4</a></li>
+                  <li><a href="tema5.html">Tema 5</a></li>
+                  <li><a href="tema6.html">Tema 6</a></li>
+              </ul>
+          </nav>
+  </header>
+
+  <script>
+  function mostrarOcultarTexto(id) {
+    var texto = document.getElementById(id);
+    var boton = document.querySelector('.boton-mostrar');
+    if (texto.style.display === 'none' || texto.style.display === '') {
+      texto.style.display = 'block';
+      boton.textContent = 'Ocultar Demostración';
+    } else {
+      texto.style.display = 'none';
+      boton.textContent = 'Mostrar Demostración';
+    }
+  }
+  </script>
+
+  <div class="container">
+
+    <center>
+        <h1>Tema 1:</h1>
+        <h2>Grupos</h2>
+    </center>
+
+    <ul>
+        <li><strong>Grupo</strong>: Sea \(G\) un conjunto con una operación binaria. \((G,\cdot)\) es grupo si cumple:
+            <ul>
+                <li>Asociativa: \((x\cdot y)\cdot z = x \cdot(y \cdot z) \quad \forall x,y,x \in G\)</li>
+                <li>Elemento neutro: \(\exists 1 \in G \quad\) t.q. \(\quad  1 \cdot x = x \cdot 1 = x \quad \forall x \in G\)</li>
+                <li>Elemento inverso: Dado \(x \in G \quad \exists y \in G \quad\) t.q. \(\quad x \cdot y = y \cdot x = 1\)</li>
+            </ul>
+            Un grupo es <strong>abeliano</strong> si cumple la propiedad conmutativa (\(x \cdot y = y \cdot x\))
+        </li>
+        <li><strong>Subgrupo</strong>: Sea \(H \subseteq G\), \(H\) no vacío, es \(H \leq G\) si cumple
+            <ul>
+                <li>\(xy \in H \quad \forall x,y \in H\)</li>
+                <li>\(x^{-1} \in H \quad \forall x \in H\)</li>
+            </ul>
+            Los subgrupos <strong>propios</strong> de \(G\) son aquellos que son distintos de \(1\) y \(G\)
+        </li>
+        <li>Conjunto clase derecha e izquierda: Sea \(H \leq G \quad\)y\(\quad x \in G\)
+            <ul>
+                <li><strong>Clase derecha</strong> de \(x\): \(\hspace{3.4mm} Hx=\{hx|h\in H\}\)</li>
+                <li><strong>Clase izquierda</strong> de \(x\): \(\hspace{1mm} xH=\{ xh|h\in H\}\)</li>
+            </ul>
+            \(|G:H|\) el <strong>índice</strong> de \(H\) en \(G\) es el cardinal del conjunto de clases derecha o izquierda
+        </li>
+        <li><strong>Subgrupo normal</strong>: Sea \(N \leq G\). Si \(xN=Nx \quad \forall x \in G \Longleftrightarrow  N \trianglelefteq G\)
+            <ul>
+                <li>\(G/N = \{Ng|g\in G\} \) grupo cociente \(\quad\) y \(\quad |G/N|=|G:N|\) índice de \(N\) en \(G\)</li>
+                <li>Si \(G\) es abeliano y \(H \leq G \quad \Longrightarrow \quad H \trianglelefteq G\)</li>
+            </ul>
+        </li>
+        <li><strong>Subgrupo</strong> de \(G\) <strong>generado</strong> por \(x\in G\):
+            \[\langle x \rangle = \{x^{n}|n \in \mathbb{Z}\}\]
+        </li>
+        <li><strong>Grupos cíclicos</strong>: Si \(\exists x \in G \hspace{0.5mm}\) t.q. \(\hspace{0.5mm} G=\langle x \rangle \quad \Longleftrightarrow \quad G\) es cíclico
+            <ul>
+                <li>Si \(G\) es cíclico \(\longrightarrow\) \(G\) es abeliano \(\longrightarrow\) si \(H \leq G\), \(H\) normal</li>
+            </ul>
+        </li>
+        <li><strong>Orden de \(x\)</strong>: El menor entero positivo \(m\) tal que \(x^{m} = 1 \quad \to \quad o(x)=m\)</li>
+        <li><strong>Grupo cociente</strong>: \(\mathbb{Z}_{n} = \mathbb{Z}/n\mathbb{Z} = \{m+n\mathbb{Z} / m \in \mathbb{Z}\}\) es un grupo con la suma <br> Porque \(\mathbb{Z}\) es abeliano y \(\langle n \rangle = n\mathbb{Z} \trianglelefteq \mathbb{Z}\) <br> \(x+n\mathbb{Z}=y+n\mathbb{Z} \quad \Longleftrightarrow \quad y-x \in n\mathbb{Z} \quad\) Se representa \(x \equiv y \) (mod \(n\))
+        </li>
+    </ul>
+
+    <div class="encuadrado">
+        <header>Lema 2.1</header>
+        <p>Supongamos que \(G\) es un grupo</p>
+        <ol class="custom-counter">
+            <li>Sean  \(u,v \in G\). Si \(uv=1 \quad \Longrightarrow \quad u=v^{-1}\) y \(v=u^{-1}\)<br>En particular, \((xy)^{-1}=y^{-1}x^{-1}\) y \((x^{-1})^{-1}=x \quad \forall x,y \in G\)</li>
+            <li>La aplicación \(x\mapsto x^{-1}\) es una biyección \(G \to G\)<br>En particular, \(G^{-1} = G\)</li>
+            <li>Si \(g \in G \Longrightarrow \) las aplicaciones \(G\to G\) definidas por \(\begin{Bmatrix}
+                    x \mapsto xg \\ x \mapsto gx
+                \end{Bmatrix} \) son biyectivas<br>En particular, \(Gg=G \quad\) y \(\quad gG = G\)</li>
+        </ol>
+    </div>
+
+    <div class="encuadrado">
+        <header>Lema 2.2 (Criterio para subgrupos)</header>
+        <p>Sea \(G\) un grupo y sea \(H \subseteq G  \quad H\) no vacío<br>Entonces \(H \leq G \quad \Longleftrightarrow \quad xy^{-1} \in H \quad \forall x,y \in H\)</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.3 (Producto de subgrupos)</header>
+        <p>Sean \(H,K \leq G\). Entonces
+        \(\quad HK \leq G \quad \Longleftrightarrow \quad HK = KH\) <br> Si \(G\) es abeliano \(\Longleftrightarrow HK=KH \Longleftrightarrow HK \leq G\)</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Lema 2.4</header>
+        <p>Sea \(H \leq G\) y sean \(x,y \in H\)</p>
+        <ol class="custom-counter">
+            <li>\(Hx = H \Longleftrightarrow x \in H\)</li>
+            <li>\(Hx=Hy \Longleftrightarrow xy^{-1} \in H\)</li>
+            <li>\(Hx \cap Hy \neq \emptyset \Longleftrightarrow Hx=Hy\)</li>
+        </ol>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.5</header>
+        <p>Si \(H \leq G\), tenemos que
+        \[|\left\{Hx|x\in G\right\}|=|\left\{xH|x\in G\right\}|\]</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.6 (Lagrange)</header>
+        <p>Supongamos que \(H \leq G\) <br>Si \(G\) es finito, entonces \(\quad |H|\) divide a \(|G| \quad\) y \(\quad |G:H|=\cfrac{|G|}{|H|}\)</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.7</header>
+        <p>Supongamos que \(N \trianglelefteq G\) <br>
+          El conjunto \(G/N\) es un grupo con la multiplicación entre subconjuntos de \(G\)<br>
+          \[(Nx)(Ny)=Nxy \quad \forall x,y \in G\]
+          El elemento neutro de \(G/N\) es \(N \quad\) y \(\quad (Nx)^{-1}=(Nx^{-1}) \quad \forall x \in G\)</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.8</header>
+        <p>Sea \(N \leq G\). Entonces
+        \[N \trianglelefteq G \quad \Longleftrightarrow \quad x^{-1}Nx = N \quad \forall x \in G \quad \Longleftrightarrow \quad x^{-1}Nx \subseteq N \quad \forall x \in G\]</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.9</header>
+        <p>Supongamos que \(N \trianglelefteq G\) y sea \(H \leq G\). Entonces
+        \(HN \leq G\)</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.10</header>
+        <p><span style="text-align: center;">Si \(G\) es cíclico y \(H \leq G \quad \Longrightarrow \quad H\) es cíclico</span></p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Corolario 2.11</header>
+        <p>Sea \(H \subseteq \mathbb{Z}\) (cíclico)
+        \(\quad H \leq \mathbb{Z} \quad \Longleftrightarrow \quad \exists ! d \in \mathbb{Z}^{+}\) t.q. \(H=\langle d \rangle = \{dn|n\in \mathbb{Z}\} \)</p>
+        <ul>
+            <li>Además, \(\langle d \rangle \subseteq \langle e \rangle \quad \Longleftrightarrow \quad e\) divide a \(d\)</li>
+        </ul>
+    </div>
+
+    <div class="encuadrado">
+        <header>Corolario 2.12</header>
+        <p>Sean \(0 \neq a,b \in \mathbb{Z}\)
+            <ol class="custom-counter">
+                <li>\(\exists ! d \in \mathbb{Z} \quad t.q. \quad \langle a \rangle + \langle b \rangle = \langle d \rangle \quad\) y \(\quad d=m.c.d.(a,b)\)</li>
+                <li>\(m.c.d.(\frac{a}{d},\frac{b}{d}) = 1\)</li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.13</header>
+        <p>Supongamos que \(x \in G\) tiene orden \(o(x)=n\)
+            <ol class="custom-counter">
+                <li>Si \(m\) es un entero, entonces \(x^{m} = 1 \quad \Longleftrightarrow \quad n\) divide a \(m\)</li>
+                <li>\(\langle x \rangle = \{1,x,x^{2},...,x^{n-1}\}\) y \(|\langle x \rangle| = n\)</li>
+                <li>Si \(0 \neq m\) es un entero, entonces \(o(x^{m})=\frac{n}{mcd(n,m)}\) <br>En particular \(x^{m}\) genera a \(\langle x \rangle \quad \Longleftrightarrow \quad mcd(n,m) = 1 \quad\) \(n\) y \(m\) coprimos</li>
+                <li>Para cada divisor \(d\) de \(n\), \(\langle x \rangle\) tiene un único subgrupo de orden \(d\), ese es \(\langle x^{\frac{n}{d}} \rangle\)</li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Corolario 2.14</header>
+        <p>Si \(G\) es finito y \(g \in G \Longrightarrow o(g)\) divide a \(|G|\) y \(g^{|G|} = 1\) <br>
+        <ul>
+            <li>Además \(G\) es cíclico \(\Longleftrightarrow \exists g \in G \quad o(g) = |G|\)</li>
+        </ul>
+        </p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Corolario 2.15</header>
+        <p>Si \(G>1\) es un grupo finito \(\hspace{5mm}\) Si \(G\) tiene orden primo \(\Longrightarrow\) \(G\) es cíclico</p>
+    </div>
+
+    <div class="encuadrado">
+        <header>Teorema 2.16</header>
+        <p>Si \(n \geq 1\), entonces \(\mathbb{Z}_{n} = \mathbb{Z}/n\mathbb{Z} = \{n\mathbb{Z},1+n\mathbb{Z},...,(n-1)+n\mathbb{Z}\}\) es un grupo cíclico de orden \(n\)
+
+  </div>
+</body>
+</html>
