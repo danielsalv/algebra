@@ -134,30 +134,30 @@
   <ul>
     <li><strong>Relación de equivalencia</strong> de \(\alpha, \beta \in \varOmega \quad\) Si \(\exists g \in G / \alpha \cdot g = \beta \quad \Longrightarrow \quad \alpha \sim \beta\) <br>
     \(\alpha \sim \beta\) es simétrica (\(\beta \sim \alpha\)), reflexiva (\(\alpha \sim \alpha\)) y transitiva (\(\beta \sim \gamma \to \alpha \sim \gamma\))</li>
-    <li><strong>Órbita</strong> \(\quad O(\alpha) = \{\beta \in \varOmega / \beta \sim \alpha\} = \{\alpha \cdot g / \forall g \in G\} \qquad \varOmega = \underset{\alpha \in \triangle}{\bigcup} O(\alpha)\) disjunta</li>
+    <li><strong>Órbita</strong> \(\quad \mathcal{O}(\alpha) = \{\beta \in \varOmega / \beta \sim \alpha\} = \{\alpha \cdot g / \forall g \in G\} \qquad \varOmega = \underset{\alpha \in \triangle}{\bigcup} \mathcal{O}(\alpha)\) disjunta</li>
     <li><strong>Estabilizador</strong>  \(\quad G_{\alpha}=\{g \in G / \alpha \cdot g = \alpha\} = Stab_{G}(\alpha)\)</li>
-    <li><strong>Fijados</strong>  \( \quad Fix(\varOmega) = \{\alpha \in \varOmega / |O(\alpha)| = 1\} = \{\alpha \in \varOmega / \alpha \cdot g = \alpha \quad \forall g \in G\}\)</li>
+    <li><strong>Fijados</strong>  \( \quad Fix(\varOmega) = \{\alpha \in \varOmega / |\mathcal{O}(\alpha)| = 1\} = \{\alpha \in \varOmega / \alpha \cdot g = \alpha \quad \forall g \in G\}\)</li>
   </ul>
 
   <div class="encuadrado"><header>Teorema 4.5 (órbita-estabilizador)</header>
   <p>Supongamos que \(G\) actúa sobre \(\varOmega\). Entonces
     <ol class="custom-counter">
       <li>\(G_{\alpha} \leq G\)</li>
-      <li>\(|O(\alpha)|=|G:G_{\alpha}|\)</li>
+      <li>\(|\mathcal{O}(\alpha)|=|G:G_{\alpha}|\)</li>
     </ol>
   </p></div>
 
   <div class="encuadrado"><header>Teorema 4.6</header>
   <p>Si \(G\) actúa sobre \(\varOmega\) un conjunto finito <br>
     Sea \(\alpha_{1},...,\alpha_{s}\) representantes de las orbitas de cardinal mayor que 1 <br>
-    \(|\varOmega| = |Fix(\varOmega)|+\sum_{i=1}^{s}|O(\alpha_{i})|\) <br>
+    \(|\varOmega| = |Fix(\varOmega)|+\sum_{i=1}^{s}|\mathcal{O}(\alpha_{i})|\) <br>
     Si \(G\) es un p-grupo finito \(|G|=p^{n} \hspace{1mm} p \text{ primo y }  n \geq 1\quad \Longrightarrow \quad |\varOmega|\equiv|Fix(\varOmega)|\text{mod } p\)
   </p></div>
 
   <center><h2>Acción de conjugación</h2></center>
   <p>Acción de conjugación es la acción de \(G\) sobre \(G \quad \to \quad x \cdot g = x^{g} = g^{-1}xg \quad x, g \in G\)
     <ul>
-      <li><strong>Clase de conjugación de \(x\)</strong>  \(\quad O(x)=cl_{G}(x)=\{x\cdot g / g \in G\} = \{x^{g} / g \in G\}\)</li>
+      <li><strong>Clase de conjugación de \(x\)</strong>  \(\quad \mathcal{O}(x)=cl_{G}(x)=\{x\cdot g / g \in G\} = \{x^{g} / g \in G\}\)</li>
       <li><strong>Centralizador en \(G\) de \(x\)</strong> \(\quad G_{x}=C_{G}(x)=\{g \in G / x^{g}=x\}=\{g \in G /xg=gx\}\)</li>
       <li>\(Fix(G)=\{x \in G / x^{g}=x \quad \forall g \in G\}=\{x \in G /xg=gx \quad \forall g \in G\}=\textbf{Z}(G) %= \underset{x \in G}{\bigcap} C_{G}(x)
       \)</li>
