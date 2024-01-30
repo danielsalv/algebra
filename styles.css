@@ -1,12 +1,6 @@
 body {
   font-size: 20px; /* Tamaño de fuente global para todo el cuerpo del documento */
 }
-/* Consulta de medios para dispositivos móviles */
-@media only screen and (max-width: 600px) {
-  body {
-    font-size: 14px; /* Tamaño de la letra más pequeño para dispositivos móviles */
-  }
-}
 .container {
   margin: 0 auto; /* Centrar horizontalmente */
   max-width: 800px; /* Máximo ancho del contenido */
