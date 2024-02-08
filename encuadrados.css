@@ -1,1 +1,76 @@
-
+.encuadrado-curso {
+  border: 2px solid #092635; /* Grosor y color del borde */
+  padding-top: 10px; /* Espacio interno superior */
+  padding-bottom: 0; /* Espacio interno inferior */
+  padding-left: 30px; /* Espacio interno izquierdo */
+  padding-right: 30px; /* Espacio interno derecho */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #092635; /* Color de fondo */
+  margin: 20px auto; /* Margen externo para centrar el encuadrado */
+}
+.encuadrado-curso header {
+  display: block; /* Convertir el header en un elemento de bloque */
+  background-color: #092635; /* Color de fondo del encabezado ANTES: #404040*/
+  border-bottom: 2px solid #092635; /* Borde inferior del encabezado */
+  padding-top: 5px; /* Espacio interno superior */
+  padding-bottom: 5px; /* Espacio interno inferior */
+  padding-left: 30px; /* Espacio interno izquierdo */
+  padding-right: 30px; /* Espacio interno derecho */
+  border-radius: 5px 5px 0 0; /* Bordes redondeados superior del encabezado */
+  margin-bottom: 20px; /* Espacio entre el encabezado y el contenido */
+  color: #fff; /* Color del texto */
+  font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+  font-size: 40px; /* Tamaño del texto en píxeles */
+  font-weight: bold; /* Texto en negrita */
+  margin-left: -30px; /* Compensar el padding izquierdo del contenedor */
+  margin-right: -30px; /* Compensar el padding derecho del contenedor */
+  margin-top: -10px; /* Compensar el padding derecho del contenedor */
+  text-align: left;
+}
+.columnas {
+        display: flex; /* Utilizamos flexbox para crear las columnas */
+        margin-top: -30px; /* Agregar margen inferior */
+    }
+.encuadrado-green {
+  width: 40%; /* Cada columna ocupa el 50% del ancho */
+  border: 2px solid #9EC8B9; /* Grosor y color del borde */
+  padding-top: 10px; /* Espacio interno superior */
+  padding-bottom: 0; /* Espacio interno inferior */
+  padding-left: 30px; /* Espacio interno izquierdo */
+  padding-right: 30px; /* Espacio interno derecho */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #9EC8B9; /* Color de fondo */
+  margin: 20px auto; /* Margen externo para centrar el encuadrado */
+}
+.encuadrado-green header {
+  display: block; /* Convertir el header en un elemento de bloque */
+  background-color: #9EC8B9; /* Color de fondo del encabezado ANTES: #404040*/
+  border-bottom: 2px solid #9EC8B9; /* Borde inferior del encabezado */
+  padding-top: 5px; /* Espacio interno superior */
+  padding-bottom: 5px; /* Espacio interno inferior */
+  padding-left: 30px; /* Espacio interno izquierdo */
+  padding-right: 30px; /* Espacio interno derecho */
+  border-radius: 5px 5px 0 0; /* Bordes redondeados superior del encabezado */
+  margin-bottom: 20px; /* Espacio entre el encabezado y el contenido */
+  color: #000000; /* Color del texto */
+  font-size: 30px; /* Tamaño del texto en píxeles */
+  font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+  font-weight: bold; /* Texto en negrita */
+  margin-left: -30px; /* Compensar el padding izquierdo del contenedor */
+  margin-right: -30px; /* Compensar el padding derecho del contenedor */
+  margin-top: -10px; /* Compensar el padding derecho del contenedor */
+  text-align: center;
+}
+/* Estilos para el botón */
+.boton-asig {
+  background-color: #1B4242;
+  color: white;
+  font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin-bottom: 100px; /* Agregar margen inferior */
+}

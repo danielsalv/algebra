@@ -104,6 +104,7 @@ header {
     padding-bottom: 25px;  /* Padding de 15 píxeles abajo */
     text-align: center;
 }
+/* Estilos para la navegación principal */
 nav ul {
     list-style-type: none;
     padding: 0;
